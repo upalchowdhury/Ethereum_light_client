@@ -28,7 +28,38 @@ async fn main() -> Result<()> {
 
     client.start().await?;
 
-    register_shutdown_handler(client);
+    shutdown_handler(client);
     std::future::pending().await // keeps the functions running forever unless manually closed
 
+}
+
+fn shutdown_handler(client: Client<FileDB>) {
+    let client = Arc::new(client);
+    let shutdown_counter = Arc::new(Mutex::new(0));
+
+    ctrlc::set_handler(move || {
+        let mut counter = shutdown_counter.lock().unwrap();
+        *counter += 1;
+
+        let counter_value = *counter;
+
+        if counter_value == 3 {
+            info!("forced shutdown");
+            exit(0);
+        }
+
+        info!(
+            "shutting down... press ctrl-c {} more times to force quit",
+            3 - counter_value
+        );
+
+        if counter_value == 1 {
+            let client = client.clone();
+            std::thread::spawn(move || {
+                block_on(client.shutdown());
+                exit(0);
+            });
+        }
+    })
+    .expect("could not register shutdown handler");
 }
