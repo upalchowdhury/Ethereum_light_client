@@ -1,0 +1,13 @@
+/Users/upalc/Documents/rustty/Ethereum_light_client/lightclient/target/debug/deps/coins_bip32-4c66b3840b049961.rmeta: /Users/upalc/.cargo/registry/src/github.com-1ecc6299db9ec823/coins-bip32-0.7.0/src/lib.rs /Users/upalc/.cargo/registry/src/github.com-1ecc6299db9ec823/coins-bip32-0.7.0/src/macros.rs /Users/upalc/.cargo/registry/src/github.com-1ecc6299db9ec823/coins-bip32-0.7.0/src/enc.rs /Users/upalc/.cargo/registry/src/github.com-1ecc6299db9ec823/coins-bip32-0.7.0/src/path.rs /Users/upalc/.cargo/registry/src/github.com-1ecc6299db9ec823/coins-bip32-0.7.0/src/primitives.rs /Users/upalc/.cargo/registry/src/github.com-1ecc6299db9ec823/coins-bip32-0.7.0/src/xkeys.rs /Users/upalc/.cargo/registry/src/github.com-1ecc6299db9ec823/coins-bip32-0.7.0/src/derived.rs /Users/upalc/.cargo/registry/src/github.com-1ecc6299db9ec823/coins-bip32-0.7.0/src/defaults.rs /Users/upalc/.cargo/registry/src/github.com-1ecc6299db9ec823/coins-bip32-0.7.0/src/prelude.rs
+
+/Users/upalc/Documents/rustty/Ethereum_light_client/lightclient/target/debug/deps/coins_bip32-4c66b3840b049961.d: /Users/upalc/.cargo/registry/src/github.com-1ecc6299db9ec823/coins-bip32-0.7.0/src/lib.rs /Users/upalc/.cargo/registry/src/github.com-1ecc6299db9ec823/coins-bip32-0.7.0/src/macros.rs /Users/upalc/.cargo/registry/src/github.com-1ecc6299db9ec823/coins-bip32-0.7.0/src/enc.rs /Users/upalc/.cargo/registry/src/github.com-1ecc6299db9ec823/coins-bip32-0.7.0/src/path.rs /Users/upalc/.cargo/registry/src/github.com-1ecc6299db9ec823/coins-bip32-0.7.0/src/primitives.rs /Users/upalc/.cargo/registry/src/github.com-1ecc6299db9ec823/coins-bip32-0.7.0/src/xkeys.rs /Users/upalc/.cargo/registry/src/github.com-1ecc6299db9ec823/coins-bip32-0.7.0/src/derived.rs /Users/upalc/.cargo/registry/src/github.com-1ecc6299db9ec823/coins-bip32-0.7.0/src/defaults.rs /Users/upalc/.cargo/registry/src/github.com-1ecc6299db9ec823/coins-bip32-0.7.0/src/prelude.rs
+
+/Users/upalc/.cargo/registry/src/github.com-1ecc6299db9ec823/coins-bip32-0.7.0/src/lib.rs:
+/Users/upalc/.cargo/registry/src/github.com-1ecc6299db9ec823/coins-bip32-0.7.0/src/macros.rs:
+/Users/upalc/.cargo/registry/src/github.com-1ecc6299db9ec823/coins-bip32-0.7.0/src/enc.rs:
+/Users/upalc/.cargo/registry/src/github.com-1ecc6299db9ec823/coins-bip32-0.7.0/src/path.rs:
+/Users/upalc/.cargo/registry/src/github.com-1ecc6299db9ec823/coins-bip32-0.7.0/src/primitives.rs:
+/Users/upalc/.cargo/registry/src/github.com-1ecc6299db9ec823/coins-bip32-0.7.0/src/xkeys.rs:
+/Users/upalc/.cargo/registry/src/github.com-1ecc6299db9ec823/coins-bip32-0.7.0/src/derived.rs:
+/Users/upalc/.cargo/registry/src/github.com-1ecc6299db9ec823/coins-bip32-0.7.0/src/defaults.rs:
+/Users/upalc/.cargo/registry/src/github.com-1ecc6299db9ec823/coins-bip32-0.7.0/src/prelude.rs:
