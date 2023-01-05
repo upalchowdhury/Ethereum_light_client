@@ -63,3 +63,53 @@ fn shutdown_handler(client: Client<FileDB>) {
     })
     .expect("could not register shutdown handler");
 }
+
+fn get_config() -> Config {
+    let cli = Cli::parse();
+
+    let config_path = home_dir().unwrap().join(".lightclient/config.toml");
+
+    let cli_config = cli.as_cli_config();
+
+    Config::from_file(&config_path, &cli.network, &cli_config)
+}
+
+#[derive(Parser)]
+struct Cli {
+    #[clap(short,long,default_value="goerli")]
+    network: String,
+    #[clap(short = 'p', long, env)]
+    rpc_port: Option<u16>,
+    #[clap(short='w',long,env)]
+    checkpoint: Option<String>,
+    #[clap(short,long,env)]
+    execution_rpc: Option<String>,
+    #[clap(short, long,env)]
+    consensus_rpc: Option<String>,
+    #[clap(short,long,env)]
+    data_dir: Option<String>,
+    #[clap(short='f',long,env)]
+    fallback: Option<String>,
+    #[clap(short = 'l', long,env)]
+    load_external_fallback:bool,
+}
+
+impl Cli {
+    fn as_cli_config(&self) -> CliConfig {
+        let checkpoint = match &self.checkpoint {
+            Some(checkpoint) => Some(hex_str_to_bytes(checkpoint).expect("invalid checkpoint")),
+            None => self.get_cached_checkpoint(),
+        };
+
+        CliConfig {
+            checkpoint,
+            execution_rpc: self.execution_rpc.clone(),
+            consensus_rpc: self.consensus_rpc.clone(),
+            data_dir: self.get_data_dir(),
+            rpc_port: self.rpc_port,
+            fallback: self.fallback.clone(),
+            load_external_fallback: self.load_external_fallback,
+        }
+    }
+
+
