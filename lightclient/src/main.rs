@@ -112,4 +112,30 @@ impl Cli {
         }
     }
 
+    fn get_cached_checkpoint(&self) -> Option<Vec<u8>> {
+        let data_dir = self.get_data_dir();
+        let checkpoint_file = data_dir.join("checkpoint");
 
+        if checkpoint_file.exists() {
+            let checkpoint_res = fs::read(checkpoint_file);
+            match checkpoint_res {
+                Ok(checkpoint) => Some(checkpoint),
+                Err(_) => None,
+            }
+        } else {
+            None
+        }
+    }
+
+    fn get_data_dir(&self) -> PathBuf {
+        if let Some(dir) = &self.data_dir {
+            PathBuf::from_str(dir).expect("cannot find data dir")
+        } else {
+            home_dir()
+                .unwrap()
+                .join(format!(".lightclient/data/{}", self.network))
+        }
+    }
+
+
+}
